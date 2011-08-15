@@ -1,0 +1,9 @@
+<h1>Products
+$forall product <- products
+    <div
+        #{productCode $ snd product} , #{productDescription $ snd product}
+        <form .delete method="post" action=@{ProductDeleteR (fst product)}"
+            <input type="submit" value="X"
+<form  method="post" action="@{ProductsR}"
+    \^{form}
+    <input type="submit" value="Post It">

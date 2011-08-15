@@ -1,0 +1,10 @@
+!!!
+<html
+    <head
+        <title>#{pageTitle pc}
+        ^{pageHead pc}
+    <body
+        <p> Hi there!
+        $maybe msg <- mmsg
+            <div #message>#{msg}
+        ^{pageBody pc}
