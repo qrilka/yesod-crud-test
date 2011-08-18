@@ -11,6 +11,7 @@ import Yesod2
 import Settings
 import Yesod.Helpers.Static
 import Yesod.Helpers.Auth
+import Yesod.Helpers.Crud
 import Database.Persist.GenericSql
 import Data.ByteString (ByteString)
 import Data.Dynamic (Dynamic, toDyn)
@@ -18,6 +19,9 @@ import Data.Dynamic (Dynamic, toDyn)
 -- Import all relevant handler modules here.
 import Handler.Root
 import Handler.Products
+
+productCrud :: Yesod2 -> Crud Yesod2 Product
+productCrud = defaultCrud
 
 -- This line actually creates our YesodSite instance. It is the second half
 -- of the call to mkYesodData which occurs in Yesod2.hs. Please see

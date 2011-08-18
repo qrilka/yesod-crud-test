@@ -1,5 +1,7 @@
 {-# LANGUAGE QuasiQuotes, TemplateHaskell, TypeFamilies #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
 module Yesod2
     ( Yesod2 (..)
     , Yesod2Route (..)
@@ -20,6 +22,7 @@ import Yesod.Helpers.Static
 import Yesod.Helpers.Auth
 import Yesod.Helpers.Auth.OpenId
 import Yesod.Helpers.Auth.Email
+import Yesod.Helpers.Crud
 import Yesod.Form.Nic
 import qualified Settings
 import System.Directory
@@ -52,6 +55,13 @@ type Handler = GHandler Yesod2 Yesod2
 -- | A useful synonym; most of the widgets functions in your application
 -- will need to be of this type.
 type Widget = GWidget Yesod2 Yesod2
+
+--mkToForm (undefined::Product)
+
+instance Item Product where
+    itemTitle = productCode
+
+type ProductCrud = Crud Yesod2 Product
 
 -- This is where we define all of the routes in our application. For a full
 -- explanation of the syntax, please see:

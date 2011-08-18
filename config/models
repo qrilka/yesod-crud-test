@@ -9,5 +9,5 @@ Email
     UniqueEmail email
 Product
     code Text
-    description Html
+    description Html toFormField=YesodNic.nicHtmlField
     deriving

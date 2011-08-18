@@ -1,9 +1,16 @@
 {-# LANGUAGE TemplateHaskell, QuasiQuotes, OverloadedStrings #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
 module Handler.Products where
 
 import Yesod2
 import Control.Applicative
 import Yesod.Form.Nic
+
+instance ToForm Product Yesod2 where
+  toForm p = fieldsToDivs $ Product
+    <$> stringField "Code" (fmap productCode p)
+    <*> nicHtmlField "Description"
+            { ffsId = Just "desc"} (fmap productDescription p)
 
 productFormlet :: Formlet s Yesod2 Product
 productFormlet p = fieldsToDivs $ Product

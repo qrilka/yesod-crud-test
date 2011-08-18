@@ -7,4 +7,6 @@
 /products ProductsR GET POST
 /products/#ProductId/delete ProductDeleteR POST
 
+/admin AdminR ProductCrud productCrud
+
 / RootR GET
