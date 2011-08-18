@@ -11,3 +11,5 @@ $nothing
         <a href=@{AuthR LoginR}>Login now
         .
 <a href="@{ProductsR}">Products
+|
+<a href="@{AdminR CrudListR}">Products admin
