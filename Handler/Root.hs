@@ -2,6 +2,7 @@
 module Handler.Root where
 
 import Yesod2
+import Yesod.Helpers.Crud
 
 -- This is a handler function for the GET request method on the RootR
 -- resource pattern. All of your resource patterns are defined in
